@@ -10,6 +10,10 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // XXXFragmentDirections 를 자동으로 생성해 안전하게 파라미터를 전달해주는 라이브러리
+        classpath 'android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0'
+        
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

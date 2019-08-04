@@ -12,7 +12,10 @@
         tools:layout="@layout/fragment_home_tab" >
         <action
             android:id="@+id/action_homeTabFragment_to_homeDetailFragment"
-            app:destination="@id/homeDetailFragment" />
+            app:destination="@id/homeDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim">
+        </action>
     </fragment>
     <fragment
         android:id="@+id/homeDetailFragment"
@@ -20,11 +23,14 @@
         android:label="fragment_home_detail"
         tools:layout="@layout/fragment_home_detail" >
         <action
-            android:id="@+id/action_homeDetailFragment_to_reviewFragment"
-            app:destination="@id/reviewFragment" />
-        <action
             android:id="@+id/action_homeDetailFragment_to_homeTabFragment"
             app:destination="@id/homeTabFragment" />
+        <action
+            android:id="@+id/action_homeDetailFragment_to_reviewFragment"
+            app:destination="@id/reviewFragment" />
+        <argument
+            android:name="product_id"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/reviewFragment"
@@ -34,5 +40,13 @@
         <action
             android:id="@+id/action_reviewFragment_to_homeDetailFragment"
             app:destination="@id/homeDetailFragment" />
+        <argument
+            android:name="product_id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_reviewFragment_to_homeTabFragment"
+            app:destination="@id/homeTabFragment"
+            app:popUpTo="@+id/homeTabFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
